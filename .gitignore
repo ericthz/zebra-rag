@@ -1,32 +1,59 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
-# Binaries for programs and plugins
+# ===== OS / editor =====
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+/.idea
+/.vscode
+/.qoder
+
+# ===== local config / secrets (never commit) =====
+configs/config.yaml
+configs/config.local.yaml
+configs/config.local.yml
+*.local.yaml
+*.local.yml
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# ===== build artifacts =====
+/bin
+/dist
+/tmp
+/out
+frontend/dist
+frontend/dist.zip
 *.exe
 *.exe~
 *.dll
 *.so
 *.dylib
 
-# Test binary, built with `go test -c`
-*.test
+# ===== dependencies =====
+/vendor
+/node_modules
+frontend/node_modules
+frontend/packages/*/node_modules
+.pnpm-store
 
-# Code coverage profiles and other test artifacts
-*.out
-coverage.*
-*.coverprofile
-profile.cov
+# ===== tool / session data =====
+/.workbuddy
+/logs
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
+# ===== private docs (not published) =====
+docs/private/
 
-# Go workspace file
-go.work
-go.work.sum
-
-# env file
-.env
-
-# Editor/IDE
-# .idea/
-# .vscode/
+# ===== misc =====
+frontend/packages/scripts/bin.ts
+*.log
+coverage.out
+coverage.html

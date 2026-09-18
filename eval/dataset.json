@@ -1,0 +1,17 @@
+{
+  "name": "zebrarag-eval-sample",
+  "items": [
+    {
+      "question": "Zebra RAG的分块策略是什么？",
+      "expected_docs": [],
+      "reference_answer": "支持固定窗口与Markdown结构分块，块过大时回退固定窗口",
+      "reference_context": "Zebra RAG支持固定窗口与Markdown结构分块策略。"
+    },
+    {
+      "question": "Zebra RAG如何做混合检索？",
+      "expected_docs": [],
+      "reference_answer": "KNN语义召回与BM25关键词召回，RRF融合，可选cross-encoder重排",
+      "reference_context": "Zebra RAG采用KNN与BM25多路召回，RRF融合，并支持重排。"
+    }
+  ]
+}

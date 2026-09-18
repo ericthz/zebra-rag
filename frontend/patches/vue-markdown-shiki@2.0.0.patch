@@ -1,0 +1,26 @@
+diff --git a/src/components/VueGroupCode.vue b/src/components/VueGroupCode.vue
+index adb3b19307a60c5e6f8754d3fb88461aeb01a652..9c4b8ecac6cc0fd4c9b3a588cb0fae9d5df53b40 100644
+--- a/src/components/VueGroupCode.vue
++++ b/src/components/VueGroupCode.vue
+@@ -6,7 +6,7 @@
+       }}</span>
+     </div>
+   </VueMarkDownHeader>
+-  <div v-for="(block, index) in blocks" v-html="block.innerHTML" :class="block.className" :key="index" v-show="chooseIndex === index"></div>
++  <div v-for="(block, index) in Array.from(blocks)" v-html="block.innerHTML" :class="block.className" :key="index" v-show="chooseIndex === index"></div>
+ </template>
+ 
+ <script setup lang="ts">
+diff --git a/src/components/VueMarkdownIt.vue b/src/components/VueMarkdownIt.vue
+index 0121681ee1725320dd5c2a20382b4db822de7421..f0875f6626be41a08a3f0963fc36dc7c9016f4c9 100644
+--- a/src/components/VueMarkdownIt.vue
++++ b/src/components/VueMarkdownIt.vue
+@@ -118,7 +118,7 @@ export default defineComponent({
+           )
+         } else {
+           const children = Array.from(element.childNodes).map(traverseNode).flat()
+-          const attrs = {}
++          const attrs: Record<string, string> = {}
+           for (let i = 0; i < element.attributes.length; i++) {
+             const attr = element.attributes[i]
+             attrs[attr.name] = attr.value

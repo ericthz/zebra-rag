@@ -1,0 +1,16 @@
+{
+  "name": "@zebra/hooks",
+  "version": "1.3.13",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": ["./src/*"]
+    }
+  },
+  "dependencies": {
+    "@zebra/axios": "workspace:*",
+    "@zebra/utils": "workspace:*"
+  }
+}
